@@ -578,7 +578,7 @@ export interface ApiLivestockStatisticLivestockStatistic
     draftAndPublish: true;
   };
   attributes: {
-    animal: Schema.Attribute.Enumeration<['sheep', 'goats', 'rabbits']>;
+    animal: Schema.Attribute.Enumeration<['sheep', 'goats']>;
     birthFemale: Schema.Attribute.Integer;
     birthMale: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;

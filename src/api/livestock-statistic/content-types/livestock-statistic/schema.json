@@ -15,8 +15,7 @@
       "type": "enumeration",
       "enum": [
         "sheep",
-        "goats",
-        "rabbits"
+        "goats"
       ]
     },
     "maleAdults": {
