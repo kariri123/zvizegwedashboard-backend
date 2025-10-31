@@ -728,6 +728,40 @@ export interface ApiPhotoRecordPhotoRecord extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiRabbitsStatisticRabbitsStatistic
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'rabbits_statistics';
+  info: {
+    displayName: 'Rabbits Statistics';
+    pluralName: 'rabbits-statistics';
+    singularName: 'rabbits-statistic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Female_Rabbits: Schema.Attribute.Integer;
+    Kids: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::rabbits-statistic.rabbits-statistic'
+    > &
+      Schema.Attribute.Private;
+    Male_Rabbits: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    Tag_Id: Schema.Attribute.String;
+    Total_Rabbits: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Weekly_Weights: Schema.Attribute.String;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1246,6 +1280,7 @@ declare module '@strapi/strapi' {
       'api::market-ready.market-ready': ApiMarketReadyMarketReady;
       'api::medical-history.medical-history': ApiMedicalHistoryMedicalHistory;
       'api::photo-record.photo-record': ApiPhotoRecordPhotoRecord;
+      'api::rabbits-statistic.rabbits-statistic': ApiRabbitsStatisticRabbitsStatistic;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

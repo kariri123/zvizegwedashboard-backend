@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rabbits_statistics",
+  "info": {
+    "singularName": "rabbits-statistic",
+    "pluralName": "rabbits-statistics",
+    "displayName": "Rabbits Statistics"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Tag_Id": {
+      "type": "string"
+    },
+    "Weekly_Weights": {
+      "type": "string"
+    },
+    "Total_Rabbits": {
+      "type": "integer"
+    },
+    "Male_Rabbits": {
+      "type": "integer"
+    },
+    "Female_Rabbits": {
+      "type": "integer"
+    },
+    "Kids": {
+      "type": "integer"
+    }
+  }
+}
