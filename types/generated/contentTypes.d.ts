@@ -504,7 +504,7 @@ export interface ApiFinancialSummaryFinancialSummary
   extends Struct.CollectionTypeSchema {
   collectionName: 'financial_summaries';
   info: {
-    displayName: 'Financial_Summary';
+    displayName: 'Financial Summary';
     pluralName: 'financial-summaries';
     singularName: 'financial-summary';
   };
@@ -512,23 +512,29 @@ export interface ApiFinancialSummaryFinancialSummary
     draftAndPublish: true;
   };
   attributes: {
-    Actual: Schema.Attribute.String;
-    Budget: Schema.Attribute.String;
-    Category: Schema.Attribute.String;
+    administration_subtotal: Schema.Attribute.Decimal;
+    biological_assets: Schema.Attribute.Decimal;
+    capex_machinery_equipment: Schema.Attribute.Decimal;
+    capex_subtotal: Schema.Attribute.Decimal;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    grand_total: Schema.Attribute.Decimal;
+    land_and_buildings: Schema.Attribute.Decimal;
+    livestock_and_feed: Schema.Attribute.Decimal;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::financial-summary.financial-summary'
     > &
       Schema.Attribute.Private;
+    opex_inputs: Schema.Attribute.Decimal;
+    personnel: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Variance: Schema.Attribute.String;
+    utilities: Schema.Attribute.Decimal;
   };
 }
 
